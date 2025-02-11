@@ -23,10 +23,10 @@ echo "\nMaking Directory..."
 mkdir "$directory_name"
 cd "$directory_name"
 aftman init
-echo "\n<<<If prompted, please enter \"Y\" on your keyboard to install Rojo>>>\n"
+echo "\n<<< If prompted, please enter \"Y\" on your keyboard to install Rojo >>>\n"
 aftman add rojo-rbx/rojo
 aftman install
-echo "\n<<<Please enter \".\" for the project directory and follow the setup instructions>>>"
+echo "\n<<< Please enter \".\" for the project directory and follow the setup instructions >>>"
 npm init roblox-ts
 echo "\nMaking Directories..."
 mkdir assets
@@ -53,4 +53,4 @@ echo "\n"
 read -p "Your Project Is Setup! Once Visual Studio Code opens you can create a new terminal and enter \"./scripts/start-server.sh\" to start Roblox Studio, Rojo Serve, and RobloxTS Watch. Press Enter or Return to continue"
 code .
 echo "\n"
-echo "Project Created!"
+echo "<<< Project Created! >>>"
