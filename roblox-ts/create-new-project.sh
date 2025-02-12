@@ -34,12 +34,10 @@ mkdir assets/shared
 mkdir assets/shared/audio
 mkdir assets/shared/images
 mkdir assets/shared/models
-mkdir assets/shared/UI
 mkdir assets/server
 mkdir assets/server/audio
 mkdir assets/server/images
 mkdir assets/server/models
-mkdir assets/server/UI
 mkdir data
 mkdir data/client
 mkdir data/server
@@ -47,6 +45,11 @@ mkdir data/shared
 mkdir remotes
 mkdir modules
 mkdir scripts
+echo "\nInstalling @rbxts/services..."
+npm i @rbxts/services
+echo "\nInstalling @rbxts/roact-rodux..."
+npm i @rbxts/roact-rodux
+echo "\nMaking Scripts..."
 echo "killall -9 \"RobloxStudio\"\nrm -rf \"server.rbxlx\"\nrm -rf \"server.rbxlx.lock\"\nrojo build --watch -o server.rbxlx &\nnpm run watch &\nrojo serve &\nsleep 1\nopen server.rbxlx\nwait" > scripts/start-server.sh
 chmod +x scripts/start-server.sh
 echo "\n"
