@@ -29,26 +29,25 @@ aftman install
 echo "\n<<< Please enter \".\" for the project directory and follow the setup instructions >>>"
 npm init roblox-ts
 echo "\nMaking Directories..."
-mkdir assets
-mkdir assets/shared
-mkdir assets/shared/audio
-mkdir assets/shared/images
-mkdir assets/shared/models
-mkdir assets/server
-mkdir assets/server/audio
-mkdir assets/server/images
-mkdir assets/server/models
-mkdir data
-mkdir data/client
-mkdir data/server
-mkdir data/shared
-mkdir remotes
-mkdir modules
 mkdir scripts
 echo "\nInstalling @rbxts/services..."
 npm i @rbxts/services
-echo "\nInstalling @rbxts/roact-rodux..."
-npm i @rbxts/roact-rodux
+echo "\nInstalling @rbxts/t..."
+npm i @rbxts/t
+echo "\nInstalling @rbxts/react..."
+npm i @rbxts/react
+echo "\nInstalling @rbxts/react-roblox..."
+npm i @rbxts/react-roblox
+echo "\nInstalling @rbxts/pretty-react-hooks..."
+npm i @rbxts/pretty-react-hooks
+echo "\nInstalling @rbxts/charm..."
+npm i @rbxts/charm
+echo "\nInstalling @rbxts/react-charm..."
+npm i @rbxts/react-charm
+echo "\nInstalling @rbxts/charm-sync..."
+npm i @rbxts/charm-sync
+echo "\nInstalling @rbxts/ripple..."
+npm i @rbxts/ripple
 echo "\nMaking Scripts..."
 echo "killall -9 \"RobloxStudio\"\nrm -rf \"server.rbxlx\"\nrm -rf \"server.rbxlx.lock\"\nrojo build --watch -o server.rbxlx &\nnpm run watch &\nrojo serve &\nsleep 1\nopen server.rbxlx\nwait" > scripts/start-server.sh
 chmod +x scripts/start-server.sh
