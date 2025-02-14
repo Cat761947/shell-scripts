@@ -62,7 +62,7 @@ npm i @rbxts/charm-sync
 echo "\nInstalling @rbxts/ripple..."
 npm i @rbxts/ripple
 echo "\nMaking Scripts..."
-echo "killall -9 \"RobloxStudio\"\nrm -rf \"server.rbxlx\"\nrm -rf \"server.rbxlx.lock\"\nrojo build --watch -o server.rbxlx &\nnpm run watch &\nrojo serve &\nsleep 1\nopen server.rbxlx\nwait" > scripts/start-server.sh
+echo "killall -9 \"RobloxStudio\"\nrm -rf \"server.rbxlx\"\nrm -rf \"server.rbxlx.lock\"\nnpm run watch &\nrojo serve &\nrojo build --watch -o server.rbxlx &\nsleep 1\nopen server.rbxlx\nwait" > scripts/start-server.sh
 chmod +x scripts/start-server.sh
 echo "\n"
 read -p "Your Project Is Setup! Once Visual Studio Code opens you can create a new terminal and enter \"./scripts/start-server.sh\" to start Roblox Studio, Rojo Serve, and RobloxTS Watch. Press Enter or Return to continue"
