@@ -1,7 +1,7 @@
 echo "\n"
 read -p "Please enter a name for the project: " directory_name
 echo "\n"
-read -p "Warning: You must have Aftman and Node.js installed on your system for this script to function, would you like to continue? (Y/N): " choice
+read -p "Warning: You must have Aftman, Node.js, Visual Studio Code, and Roblox Studio installed on your system for this script to function, would you like to continue? (Y/N): " choice
 choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
 if [[ "$choice" == "y" ]]; then
     echo "\n"
