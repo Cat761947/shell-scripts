@@ -29,11 +29,24 @@ aftman install
 echo "\n<<< Please enter \".\" for the project directory and follow the setup instructions >>>"
 npm init roblox-ts
 echo "\nMaking Directories..."
-mkdir scripts
+mkdir -p assets/{animations,audio,images,models,ui}
+mkdir -p assets/ui/{icons,images,sounds}
+mkdir -p docs
+mkdir -p libs
+mkdir -p scripts
+mkdir -p src/client/{components,config,interfaces,models,services,systems,ui,utils}
+mkdir -p src/client/ui/{components,contexts,hooks,layouts,motion,themes}
+mkdir -p src/server/{components,config,interfaces,models,services,systems,utils}
+mkdir -p src/shared/{components,config,interfaces,models,remotes,systems,utils}
+mkdir -p src/shared/remotes/{events,functions}
+mkdir -p src/tests/{client,server,shared}
+mkdir -p src/types
 echo "\nInstalling @rbxts/services..."
 npm i @rbxts/services
 echo "\nInstalling @rbxts/t..."
 npm i @rbxts/t
+echo "\nInstalling @rbxts/testez..."
+npm i @rbxts/testez
 echo "\nInstalling @rbxts/react..."
 npm i @rbxts/react
 echo "\nInstalling @rbxts/react-roblox..."
