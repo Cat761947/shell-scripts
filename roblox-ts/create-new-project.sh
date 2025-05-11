@@ -1,34 +1,36 @@
-echo "\n"
+#!/usr/bin/env bash
+
+echo -e "\n"
 read -p "Please enter a name for the project: " directory_name
-echo "\n"
+echo -e "\n"
 read -p "Warning: You must have Aftman, Node.js, Visual Studio Code, and Roblox Studio installed on your system for this script to function, would you like to continue? (Y/N): " choice
-choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
+choice=$(echo -e "$choice" | tr '[:upper:]' '[:lower:]')
 if [[ "$choice" == "y" ]]; then
-    echo "\n"
+    echo -e "\n"
 else
-    echo "\nQuitting..."
+    echo -e "\nQuitting..."
     exit 1
 fi
 read -p "Warning: Any folder with your project name will be PERNAMENTLY DELETED, would you like to continue? (Y/N): " choice
-choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
+choice=$(echo -e "$choice" | tr '[:upper:]' '[:lower:]')
 if [[ "$choice" == "y" ]]; then
-    echo "\n"
+    echo -e "\n"
 else                            
-    echo "\nQuitting..."                     
+    echo -e "\nQuitting..."                     
     exit 1                                                                                     
 fi
-echo "Removing Directory If It Exists..."
+echo -e "Removing Directory If It Exists..."
 rm -rf "$directory_name"
-echo "\nMaking Directory..."
+echo -e "\nMaking Directory..."
 mkdir "$directory_name"
 cd "$directory_name"
 aftman init
-echo "\n<<< If prompted, please enter \"Y\" on your keyboard to install Rojo >>>\n"
+echo -e "\n<<< If prompted, please enter \"Y\" on your keyboard to install Rojo >>>\n"
 aftman add rojo-rbx/rojo
 aftman install
-echo "\n<<< Please enter \".\" for the project directory and follow the setup instructions >>>"
+echo -e "\n<<< Please enter \".\" for the project directory and follow the setup instructions >>>"
 npm init roblox-ts
-echo "\nMaking Directories..."
+echo -e "\nMaking Directories..."
 mkdir -p assets/{animations,audio,images,models,ui}
 mkdir -p assets/ui/{icons,images,sounds}
 mkdir -p docs
@@ -41,31 +43,59 @@ mkdir -p src/shared/{components,config,interfaces,models,remotes,systems,utils}
 mkdir -p src/shared/remotes/{events,functions}
 mkdir -p src/tests/{client,server,shared}
 mkdir -p src/types
-echo "\nInstalling @rbxts/services..."
+echo -e "\nInstalling @rbxts/services..."
 npm i @rbxts/services
-echo "\nInstalling @rbxts/t..."
+echo -e "\nInstalling @rbxts/t..."
 npm i @rbxts/t
-echo "\nInstalling @rbxts/testez..."
+echo -e "\nInstalling @rbxts/testez..."
 npm i @rbxts/testez
-echo "\nInstalling @rbxts/react..."
+echo -e "\nInstalling @rbxts/react..."
 npm i @rbxts/react
-echo "\nInstalling @rbxts/react-roblox..."
+echo -e "\nInstalling @rbxts/react-roblox..."
 npm i @rbxts/react-roblox
-echo "\nInstalling @rbxts/pretty-react-hooks..."
+echo -e "\nInstalling @rbxts/pretty-react-hooks..."
 npm i @rbxts/pretty-react-hooks
-echo "\nInstalling @rbxts/charm..."
+echo -e "\nInstalling @rbxts/charm..."
 npm i @rbxts/charm
-echo "\nInstalling @rbxts/react-charm..."
+echo -e "\nInstalling @rbxts/react-charm..."
 npm i @rbxts/react-charm
-echo "\nInstalling @rbxts/charm-sync..."
+echo -e "\nInstalling @rbxts/charm-sync..."
 npm i @rbxts/charm-sync
-echo "\nInstalling @rbxts/ripple..."
+echo -e "\nInstalling @rbxts/ripple..."
 npm i @rbxts/ripple
-echo "\nMaking Scripts..."
-echo "killall -9 \"RobloxStudio\"\nrm -rf \"server.rbxlx\"\nrm -rf \"server.rbxlx.lock\"\nnpm run watch &\nrojo serve &\nrojo build --watch -o server.rbxlx &\nsleep 1\nopen server.rbxlx\nwait" > scripts/start-server.sh
+echo -e "\nMaking Scripts..."
+cat <<EOL > scripts/start-server.sh
+#!/usr/bin/env bash
+
+echo -e "Killing studio..."
+killall -9 "RobloxStudio"
+
+echo -e "Deleting Old Build..."
+rm -rf "server.rbxlx"
+rm -rf "server.rbxlx.lock"
+
+echo -e "Compiling..."
+npm run build
+echo -e "Building..."
+rojo build -o server.rbxlx
+echo -e "Starting Studio..."
+open server.rbxlx
+
+sleep 1
+
+echo -e "Starting Compiler Watcher..."
+npm run watch &
+sleep 1
+echo -e "Starting Build Watcher..."
+rojo build --watch -o server.rbxlx &
+sleep 1
+echo -e "Serving..."
+rojo serve &
+wait
+EOL
 chmod +x scripts/start-server.sh
-echo "\n"
+echo -e "\n"
 read -p "Your Project Is Setup! Once Visual Studio Code opens you can create a new terminal and enter \"./scripts/start-server.sh\" to start Roblox Studio, Rojo Serve, and RobloxTS Watch. Press Enter or Return to continue"
 code .
-echo "\n"
-echo "<<< Project Created! >>>"
+echo -e "\n"
+echo -e "<<< Project Created! >>>"
