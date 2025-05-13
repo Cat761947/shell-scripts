@@ -36,10 +36,10 @@ mkdir -p assets/ui/{icons,images,sounds}
 mkdir -p docs
 mkdir -p libs
 mkdir -p scripts
-mkdir -p src/client/{components,config,interfaces,models,services,systems,ui,utils}
+mkdir -p src/client/{components,config,interfaces,classes,services,systems,utils}
 mkdir -p src/client/ui/{components,contexts,hooks,layouts,motion,themes}
-mkdir -p src/server/{components,config,interfaces,models,services,systems,utils}
-mkdir -p src/shared/{components,config,interfaces,models,remotes,systems,utils}
+mkdir -p src/server/{components,config,interfaces,classes,services,systems,utils}
+mkdir -p src/shared/{components,config,interfaces,classes,remotes,systems,utils}
 mkdir -p src/shared/remotes/{events,functions}
 mkdir -p src/tests/{client,server,shared}
 mkdir -p src/types
