@@ -37,7 +37,7 @@ mkdir -p docs
 mkdir -p libs
 mkdir -p scripts
 mkdir -p src/client/{components,config,interfaces,classes,services,systems,utils}
-mkdir -p src/client/ui/{components,contexts,hooks,layouts,motion,themes}
+mkdir -p src/client/ui/{animations,atoms,components,hooks,layouts,themes}
 mkdir -p src/server/{components,config,interfaces,classes,services,systems,utils}
 mkdir -p src/shared/{components,config,interfaces,classes,remotes,systems,utils}
 mkdir -p src/shared/remotes/{events,functions}
