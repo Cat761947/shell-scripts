@@ -40,6 +40,7 @@ mkdir -p src/client/{components,config,interfaces,classes,services,systems,utils
 mkdir -p src/client/ui/{animations,atoms,components,hooks,layouts,themes}
 mkdir -p src/server/{components,config,interfaces,classes,services,systems,utils}
 mkdir -p src/shared/{components,config,interfaces,classes,remotes,systems,utils}
+mkdir -p src/shared-first
 mkdir -p src/shared/remotes/{events,functions}
 mkdir -p src/tests/{client,server,shared}
 mkdir -p src/types
